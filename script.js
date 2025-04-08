@@ -336,9 +336,9 @@ function endGame(isSuccess) {
     
     // Play sound based on success or failure
     if (isSuccess) {
-        successSound.play();
+       // successSound.play();
     } else {
-        failSound.play();
+        //failSound.play();
     }
     
     // Update game over screen
