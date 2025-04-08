@@ -1,0 +1,226 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Common Screen Styles */
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.screen.active {
+    display: block;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3b82f6;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Difficulty Button Styles */
+.difficulty-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn-easy {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-medium {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.btn-hard {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* Card Styles */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    //box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.card ul {
+    list-style-position: inside;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.card li {
+    margin-bottom: 10px;
+}
+
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* For smaller screens, reduce to 3 columns */
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Memory Cards */
+.memory-card {
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.memory-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched .card-front {
+    background-color: #10b981;
+    color: white;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.card-front {
+    background-color: white;
+    transform: rotateY(180deg);
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-back {
+    background-color: #3b82f6;
+    color: white;
+    font-size: 24px;
+}
+
+/* Game Header */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.game-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.score, .timer {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Game Over Screen */
+.game-stats-final {
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.learned-words {
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.word-pairs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}

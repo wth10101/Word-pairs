@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Vocabulary Memory Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="screen active">
+        <div class="container">
+            <h1>Learn Spanish with Memory Cards</h1>
+            <p>Match Spanish words with their English translations to improve your vocabulary</p>
+            
+            <div class="card">
+                <h2>How to Play</h2>
+                <ul>
+                    <li>Flip cards to find matching Spanish-English pairs</li>
+                    <li>Match all pairs before the timer runs out</li>
+                    <li>Each correct match earns you points</li>
+                    <li>Challenge yourself with different difficulty levels</li>
+                </ul>
+            </div>
+            
+            <h2>Select Difficulty</h2>
+            <div class="difficulty-buttons">
+                <button class="btn btn-easy" data-level="easy">Easy</button>
+                <button class="btn btn-medium" data-level="medium">Medium</button>
+                <button class="btn btn-hard" data-level="hard">Hard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+        <div class="game-header">
+            <div class="game-stats">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="timer">Time: <span id="timer">00:00</span></div>
+            </div>
+            <div class="game-controls">
+                <button id="hint-btn" class="btn">Hint</button>
+                <button id="restart-btn" class="btn">Restart</button>
+                <button id="menu-btn" class="btn">Menu</button>
+            </div>
+        </div>
+        
+        <div id="game-board" class="game-board">
+            <!-- Cards will be generated here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over-screen" class="screen">
+        <div class="container">
+            <div id="success-message">
+                <h2>Congratulations!</h2>
+                <p>You completed the <span id="level-completed">Easy</span> level</p>
+            </div>
+            
+            <div id="failure-message" class="hidden">
+                <h2>Time's Up!</h2>
+                <p>Better luck next time</p>
+            </div>
+            
+            <div class="game-stats-final">
+                <div class="stat-row">
+                    <span>Final Score:</span>
+                    <span id="final-score">0</span>
+                </div>
+                <div class="stat-row">
+                    <span>Time Remaining:</span>
+                    <span id="time-remaining">00:00</span>
+                </div>
+                <div class="stat-row">
+                    <span>Pairs Found:</span>
+                    <span id="pairs-found">0/0</span>
+                </div>
+            </div>
+            
+            <div id="learned-words" class="learned-words">
+                <h3>Words You Learned</h3>
+                <div id="word-pairs" class="word-pairs">
+                    <!-- Word pairs will be added here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="game-over-buttons">
+                <button id="play-again-btn" class="btn">Play Again</button>
+                <button id="return-menu-btn" class="btn">Change Level</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
