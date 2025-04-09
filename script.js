@@ -375,7 +375,7 @@ function endGame(isSuccess) {
             const wordPairDiv = document.createElement('div');
             
             const spanishWord = document.createElement('span');
-            spanishWord.textContent = pair.spanish;
+            spanishWord.textContent = pair.spanish+"/"; // with separator
             spanishWord.className = 'spanish-word';
             
             const englishWord = document.createElement('span');
